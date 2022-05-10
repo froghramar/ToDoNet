@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is a to do list built with .NET, Entity Framework and Prosgresql.</p>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Description</th>
+      </tr>
+      @foreach (var toDoItem in ((IEnumerable<ToDoItem>) ViewData["TodoItems"]!)!)
+      {
+        <tr>
+          <td>@toDoItem.Id</td>
+          <td>@toDoItem.Title</td>
+          <td>@toDoItem.Description</td>
+        </tr>
+      }
+    </table>
+</div>
